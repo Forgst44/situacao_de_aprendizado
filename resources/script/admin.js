@@ -1,15 +1,15 @@
 
 import { eventos } from "./eventosDados.js";
 
-// Recupera as inscrições
+
 let inscricoes = JSON.parse(
     sessionStorage.getItem("inscricoesEventos")
 ) || {};
 
-// Local onde os participantes serão exibidos
+
 let lista = document.getElementById("listaParticipantes");
 
-// Percorre os três eventos
+
 eventos.forEach((evento) => {
 
     let titulo = document.createElement("h2");
@@ -18,7 +18,7 @@ eventos.forEach((evento) => {
 
     lista.appendChild(titulo);
 
-    // Recupera os participantes daquele evento
+    
     let participantes = inscricoes[evento.id] || [];
 
     if (participantes.length === 0) {
@@ -38,7 +38,7 @@ eventos.forEach((evento) => {
 
         let li = document.createElement("li");
 
-        // Mostra somente o nome
+      
         li.textContent = participante.nome;
 
         ul.appendChild(li);

@@ -1,15 +1,13 @@
 
 import { eventos } from "./eventosDados.js";
 
-
 let morador = JSON.parse(
-    sessionStorage.getItem("moradorLogado")
+    localStorage.getItem("moradorLogado")
 );
-
 
 if (!morador) {
 
-    alert("Você precisa realizar o cadastro primeiro!");
+    alert("Faça login para acessar os eventos!");
 
     window.location.href = "index.html";
 
@@ -20,19 +18,27 @@ if (!morador) {
 
 }
 
-
 let inscricoes = JSON.parse(
-    sessionStorage.getItem("inscricoesEventos")
+    localStorage.getItem("inscricoesEventos")
 ) || {};
-
 
 let botoes = document.querySelectorAll("[data-evento]");
 
 botoes.forEach((botao) => {
 
-    botao.addEventListener("click", () => {
+    let idEvento = botao.dataset.evento;
 
-        let idEvento = botao.dataset.evento;
+    // Verifica se o morador já está inscrito
+    let jaInscrito = (inscricoes[idEvento] || []).some((participante) => {
+        return participante.email === morador?.email;
+    });
+
+    if (jaInscrito) {
+        botao.textContent = "Inscrito!";
+        botao.disabled = true;
+    }
+
+    botao.addEventListener("click", () => {
 
         let eventoEscolhido = eventos.find((evento) => {
             return evento.id == idEvento;
@@ -43,12 +49,10 @@ botoes.forEach((botao) => {
             return;
         }
 
-        
         if (!inscricoes[idEvento]) {
             inscricoes[idEvento] = [];
         }
 
-        
         let jaInscrito = inscricoes[idEvento].some((participante) => {
             return participante.email === morador.email;
         });
@@ -58,22 +62,17 @@ botoes.forEach((botao) => {
             return;
         }
 
-        
         inscricoes[idEvento].push({
             nome: morador.nome,
             email: morador.email
         });
 
-        
-        sessionStorage.setItem(
+        localStorage.setItem(
             "inscricoesEventos",
             JSON.stringify(inscricoes)
         );
 
-        alert(
-            "Você foi inscrito no evento: " +
-            eventoEscolhido.nome
-        );
+        alert("Inscrição realizada em: " + eventoEscolhido.nome);
 
         botao.textContent = "Inscrito!";
         botao.disabled = true;

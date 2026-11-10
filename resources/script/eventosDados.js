@@ -1,9 +1,10 @@
 
 export const eventos = [
+
     {
         id: 1,
         nome: "Campanha de arrecadação",
-        descricao: "Participe de uma campanha de arrecadação de alimentos para famílias necessitadas."
+        descricao: "Arrecadação de alimentos para famílias necessitadas."
     },
 
     {
@@ -15,6 +16,7 @@ export const eventos = [
     {
         id: 3,
         nome: "Reunião de moradores",
-        descricao: "Participe das decisões e melhorias para nossa comunidade."
+        descricao: "Participe das decisões e melhorias da comunidade."
     }
+
 ];

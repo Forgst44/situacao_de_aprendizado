@@ -3,10 +3,10 @@ import { administrador } from "./administrador.js";
 
 export function fazerLoginAdmin() {
 
-    let email = document.getElementById("emailAdmin").value;
+    let email = document.getElementById("emailAdmin").value.trim();
     let senha = document.getElementById("senhaAdmin").value;
 
-    if (email.trim() === "" || senha.trim() === "") {
+    if (email === "" || senha === "") {
         alert("Preencha todos os campos!");
         return;
     }

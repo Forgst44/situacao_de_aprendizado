@@ -3,16 +3,16 @@ import { moradores } from "./moradores.js";
 
 export function fazerLogin() {
 
-    let email = document.getElementById("emailLogin").value;
+    let email = document.getElementById("emailLogin").value.trim();
     let password = document.getElementById("senhaLogin").value;
 
-    if (email.trim() === "" || password.trim() === "") {
+    if (email === "" || password === "") {
         alert("Preencha todos os campos!");
         return;
     }
 
     let usuarioEncontrado = moradores.find((morador) => {
-        return morador.email === email;
+        return morador.email.toLowerCase() === email.toLowerCase();
     });
 
     if (!usuarioEncontrado) {
@@ -25,9 +25,12 @@ export function fazerLogin() {
         return;
     }
 
+    localStorage.setItem("moradorLogado", JSON.stringify({
+        nome: usuarioEncontrado.nome,
+        email: usuarioEncontrado.email
+    }));
+
     alert("Login realizado com sucesso!");
 
-    console.log("Usuário logado:");
-    console.log("Nome: " + usuarioEncontrado.nome);
-    console.log("Email: " + usuarioEncontrado.email);
+    window.location.href = "eventos.html";
 }

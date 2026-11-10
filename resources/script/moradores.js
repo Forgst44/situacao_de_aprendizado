@@ -9,4 +9,6 @@ export class moradoresParticipando {
     }
 }
 
-export let moradores = [];
+export let moradores = JSON.parse(
+    localStorage.getItem("moradores")
+) || [];

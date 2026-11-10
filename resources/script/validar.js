@@ -21,7 +21,7 @@ export function validar(nome, email, password, address, celular) {
         return false;
     }
 
-    if (isNaN(celular) || celular.length < 10 || celular.length > 11) {
+    if (!/^\d{10,11}$/.test(celular)) {
         alert("Celular deve conter 10 ou 11 números!");
         return false;
     }

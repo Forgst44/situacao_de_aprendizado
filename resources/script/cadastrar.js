@@ -24,11 +24,14 @@ export function cadastrarMoradores() {
 
     moradores.push(novoMorador);
 
+    
+    sessionStorage.setItem("moradorLogado", JSON.stringify({
+        nome: nome,
+        email: email
+    }));
+
     alert("Morador cadastrado com sucesso!");
 
-    document.getElementById("nome").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("celular").value = "";
+    
+    window.location.href = "eventos.html";
 }

@@ -1,53 +1,42 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sistema de moradores</title>
-
+    <title>Associação Comunitária</title>
     <link rel="stylesheet" href="resources/css/style.css">
-
-    <script type="module" src="resources/script/script.js"></script>
 </head>
-
 <body>
 
-    <h1>Cadastro de moradores</h1>
+    <header>
+        <h1>Associação Comunitária</h1>
+        <p>Bem-vindo à nossa comunidade!</p>
+    </header>
 
-    <form id="formCadastro">
-        <input type="text" id="nome" placeholder="Digite seu nome" required>
-        <input type="email" id="email" placeholder="Digite seu email" required>
-        <input type="password" id="password" placeholder="Digite sua senha" required>
-        <input type="text" id="address" placeholder="Digite seu endereço" required>
-        <input type="tel" id="celular" placeholder="Digite seu celular" required>
+    <main>
+        <section>
+            <h2>Acesse sua conta</h2>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+            <div class="botoes">
+                <a href="cadastrar.html">
+                    <button type="button">Cadastrar Morador</button>
+                </a>
 
-    <hr>
+                <a href="login.html">
+                    <button type="button">Login de Morador</button>
+                </a>
 
-    <h2>Login de moradores</h2>
+                <a href="loginAdmin.html">
+                    <button type="button">Login de Administrador</button>
+                </a>
+            </div>
+        </section>
+    </main>
 
-    <form id="formLogin">
-        <input type="email" id="emailLogin" placeholder="Digite seu email" required>
-        <input type="password" id="senhaLogin" placeholder="Digite sua senha" required>
-
-        <button type="submit">Entrar</button>
-    </form>
-
-    <hr>
-
-    <h2>Login do administrador</h2>
-
-    <form id="formLoginAdmin">
-        <input type="email" id="emailAdmin" placeholder="Email do administrador" required>
-        <input type="password" id="senhaAdmin" placeholder="Senha do administrador" required>
-
-        <button type="submit">Entrar como administrador</button>
-    </form>
+    <footer>
+        <p>Associação Comunitária © 2026</p>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,56 @@
+
+/* Área administrativa */
+
+.pagina-admin {
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsl(192, 100%, 70%);
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-admin {
+    background-color: white;
+    width: 80%;
+    max-width: 800px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container-admin h1 {
+    color: hsl(197, 96%, 70%);
+}
+
+#listaParticipantes {
+    text-align: left;
+}
+
+#listaParticipantes h2 {
+    background-color: hsl(197, 96%, 70%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#listaParticipantes li {
+    padding: 8px;
+    color: #333;
+}
+
+#btnSair {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnSair:hover {
+    background-color: #b71c1c;
+}
